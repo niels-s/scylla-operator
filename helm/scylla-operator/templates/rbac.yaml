@@ -17,7 +17,6 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  creationTimestamp: null
   name: scylla-operator-manager-role
 rules:
   - apiGroups:
@@ -117,6 +116,10 @@ rules:
       - patch
       - update
       - watch
+  {{- if .Values.rbac.clusterRole.rules }}
+    {{- toYaml .Values.rbac.clusterRole.rules | nindent 2 }}
+  {{- end }}
+
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
