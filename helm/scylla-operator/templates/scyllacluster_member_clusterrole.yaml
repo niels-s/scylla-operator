@@ -33,3 +33,6 @@ rules:
   - scyllaclusters
   verbs:
   - get
+{{- if .Values.rbac.clusterRole.rules }}
+{{ toYaml .Values.rbac.clusterRole.rules }}
+{{- end }}

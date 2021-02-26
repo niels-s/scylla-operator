@@ -138,3 +138,6 @@ rules:
   - patch
   - update
   - watch
+{{- if .Values.rbac.clusterRole.rules }}
+{{ toYaml .Values.rbac.clusterRole.rules }}
+{{- end }}

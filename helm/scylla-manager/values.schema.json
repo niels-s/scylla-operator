@@ -189,6 +189,22 @@
                 }
             }
         },
+        "rbac": {
+            "type": "object",
+            "properties": {
+                "clusterRole": {
+                    "type": "object",
+                    "properties": {
+                        "rules": {
+                            "type": "array",
+                            "items": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "tolerations": {
             "type": "array"
         },
