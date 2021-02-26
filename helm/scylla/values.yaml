@@ -20,6 +20,11 @@ serviceAccount:
   # Annotations to add to the service account
   annotations: {}
 
+rbac:
+  clusterRole:
+    # Define additional rules to add to the ClusterRole
+    rules: []
+
 alternator:
   # Allows to enable Alternator (DynamoDB compatible API) frontend
   enabled: false
