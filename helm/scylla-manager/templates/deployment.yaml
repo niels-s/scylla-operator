@@ -21,6 +21,7 @@ spec:
       labels:
         {{- include "scylla-manager.selectorLabels" . | nindent 8 }}
     spec:
+      serviceAccountName: {{ include "scylla-manager.serviceAccountName" . }}
       containers:
       - args:
         - --config-file=/mnt/etc/scylla-manager/scylla-manager.yaml

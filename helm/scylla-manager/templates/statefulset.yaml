@@ -15,6 +15,7 @@ spec:
       labels:
         control-plane: scylla-manager-controller
     spec:
+      serviceAccountName: {{ include "scylla-manager.serviceAccountName" . }}
       containers:
         - args:
             - manager-controller
